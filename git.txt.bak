@@ -1,0 +1,8 @@
+add:git add **.txt
+status:git status
+commit:git commit -m "message shuoming"
+connect to ssh github:git remote add origin git@github.com:michaelliao/learngit.git
+push local to remote:git push -u origin master
+cat:cat **.txt
+show the change message(before commit):git diff HEAD -- readme.txt
+key:cat ~/.ssh/id_rsa.pub
