@@ -1,3 +1,24 @@
+/**安装git客户端
+①设置用户名和email
+
+git config --global user.name "heliang5241"
+
+git config --global user.email "1960050004@qq.com"
+
+执行完成之后该目录下会新增加一个.gitconfig文件
+
+②创建SSH key
+
+$ ssh-keygen -t rsa -C "1960050004@qq.com"
+
+③linux权限设置
+	chmod  600  /home/xiaoqiang.he/.ssh/*
+④id_rsa.pub  加入git官网setting  KEY
+⑤The authenticity of host can't be established.的解决方法
+	ssh -o StrictHostKeyChecking=no root@192.168.1.1
+⑥ssh -T git@github.com
+
+
 add:git add **.txt
 status:git status
 commit:git commit -m "message shuoming"
