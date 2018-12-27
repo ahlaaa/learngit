@@ -19,7 +19,7 @@ $ ssh-keygen -t rsa -C "1960050004@qq.com"
 ⑥ssh -T git@github.com
 
 操作:
-git pull '更新同步
+git pull '更新同步 git pull origin master:master
 git commit [-a] [-m]
 git push
 
