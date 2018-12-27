@@ -1,6 +1,7 @@
 ----添加主机并提交
 
-$ git remote add aliyun 47.98.152.98
+$ git remote add aliyun git@github:bx_reader/bx-reader-api.git
+//git remote add aliyun 47.98.152.98
 
 $ git remote -v
 aliyun  47.98.152.98 (fetch)
