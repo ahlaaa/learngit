@@ -1,3 +1,14 @@
+----添加主机并提交
+
+$ git remote add aliyun 47.98.152.98
+
+$ git remote -v
+aliyun  47.98.152.98 (fetch)
+aliyun  47.98.152.98 (push)
+
+1--git pull aliyun master:master
+2--git push aliyun master:master
+
 /**安装git客户端
 ①设置用户名和email
 
