@@ -1,5 +1,3 @@
-Git is a version control system.
-G
-asadasit is free software.
-c
-dasdasdasdhange it
+网址：https://entwickler.dhl.de/
+帐号：seant@bizslink.com
+密码：Bizslink321$
