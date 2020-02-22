@@ -14,3 +14,7 @@ perspective: 111px(css)
 https://www.viphper.com/1434.html(SSL)
 https://www.php.cn/php.html(xx)  https://www.viphper.com/28.html(ms)   https://www.viphper.com/211.html(PHP问题)
 https://www.viphper.com/203.html(sql)
+
+Python:
+  https://github.com/tomxin7/DouYinFaceTech
+  https://mp.weixin.qq.com/s/iTtVXMVdoTBxWHzEzbQH1Q
