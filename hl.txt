@@ -18,3 +18,5 @@ https://www.viphper.com/203.html(sql)
 Python:
   https://github.com/tomxin7/DouYinFaceTech
   https://mp.weixin.qq.com/s/iTtVXMVdoTBxWHzEzbQH1Q
+
+wget -r -m -nv --reject=rar,7z,css,js,jpg,jpeg,gif,bmp,png,swf,exe -o /smb/public/test1/output.txt http://www.baidu.com/
