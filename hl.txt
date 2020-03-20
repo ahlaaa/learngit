@@ -20,3 +20,5 @@ Python:
   https://mp.weixin.qq.com/s/iTtVXMVdoTBxWHzEzbQH1Q
 
 wget -r -m -nv --reject=rar,7z,css,js,jpg,jpeg,gif,bmp,png,swf,exe -o /smb/public/test1/output.txt http://www.baidu.com/
+
+http://www.52ghai.com/thread-3786-1-1.html(易语言)
