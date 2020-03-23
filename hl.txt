@@ -26,3 +26,5 @@ http://www.52ghai.com/thread-3786-1-1.html(易语言)
 ----view row即下载
 
 https://blog.csdn.net/Silly2016/article/details/79884829
+
+文件偏移也比较好理解，文件开始的第一个字节偏移量为0之后每经过一个字节偏移量就加1
