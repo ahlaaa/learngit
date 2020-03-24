@@ -70,6 +70,7 @@ https://wenku.baidu.com/view/2c4e8c7a1ed9ad51f01df290.html
   1.把字体文件放到附件,再释放
   2.调整电脑cleantype
   3.区域设置太大，容易找不到
+  4.没有useDict()..................................
 
 Import "dm3.dll"
 Dim dm As COM("dm3.dll")
@@ -91,6 +92,28 @@ End Function
 https://wenku.baidu.com/view/cdb56e3067ec102de2bd89eb.html
 python图像文字:
 https://blog.csdn.net/jclian91/article/details/80628188
+
+import pytesseract
+from PIL import Image
+from PIL import ImageEnhance
+
+pytesseract.pytesseract.tesseract_cmd = 'H:/webSocket/sw/Tesseract-OCR/tesseract.exe'
+# text = pytesseract.image_to_string(Image.open('./1.png'))
+# data = pytesseract.image_to_data(Image.open('./1.jpg'))
+
+import matplotlib.pyplot as plt
+
+img = Image.open("5.png", "r")
+im = img.convert("L")
+en = ImageEnhance.Contrast(im)
+im = en.enhance(2)
+# plt.imshow(img)
+# im.show()
+
+print pytesseract.image_to_string(im)
+# print pytesseract.image_to_string(Image.open('1.jpg'), lang='eng')
+# 使用pytesseract对中文（含英文，但识别率降低）进行识别
+# print(pytesseract.image_to_string(Image.open('textCh.png'), lang='chi_sim'))
 
 我用CE搜索到了游戏的血值，三级基址[[[009c0ccc+1c]+20]+46c]，窗口句柄是1049380，在按键精灵里弹出MESSAGE的消息显示数值，要怎么写？
 Val = Plugin.Memory.Read32Bit(Hwnd, &H9C0CCC)
