@@ -86,3 +86,9 @@ End Function
 https://wenku.baidu.com/view/cdb56e3067ec102de2bd89eb.html
 python图像文字:
 https://blog.csdn.net/jclian91/article/details/80628188
+
+我用CE搜索到了游戏的血值，三级基址[[[009c0ccc+1c]+20]+46c]，窗口句柄是1049380，在按键精灵里弹出MESSAGE的消息显示数值，要怎么写？
+Val = Plugin.Memory.Read32Bit(Hwnd, &H9C0CCC)
+Val = Plugin.Memory.Read32Bit(Hwnd, Val+&H1c)
+Val = Plugin.Memory.Read32Bit(Hwnd, Val+&H20)
+Val = Plugin.Memory.Read32Bit(Hwnd, Val+&H46c)
