@@ -90,6 +90,15 @@ End Function
 
 基址:
 https://wenku.baidu.com/view/cdb56e3067ec102de2bd89eb.html
+
+python:
+import ctypes
+
+value = 'aaXXX,;@~'  # 定义一个字符串变量
+address = id(value)  # 获取value的地址，赋给address
+get_value = ctypes.cast(address, ctypes.py_object).value  # 读取地址中的变量
+print get_value.decode('utf8')
+
 python图像文字:
 https://blog.csdn.net/jclian91/article/details/80628188
 
