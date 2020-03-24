@@ -69,6 +69,7 @@ https://wenku.baidu.com/view/2c4e8c7a1ed9ad51f01df290.html
 找字解决尝试:
   1.把字体文件放到附件,再释放
   2.调整电脑cleantype
+  3.区域设置太大，容易找不到
 
 Import "dm3.dll"
 Dim dm As COM("dm3.dll")
