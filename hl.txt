@@ -66,6 +66,10 @@ https://wenku.baidu.com/view/2c4e8c7a1ed9ad51f01df290.html
 弹框处理()
 任务存在()
 
+找字解决尝试:
+  1.把字体文件放到附件,再释放
+  2.调整电脑cleantype
+
 Import "dm3.dll"
 Dim dm As COM("dm3.dll")
 dm = CreateObject("dm.dmsoft")
