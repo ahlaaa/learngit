@@ -65,3 +65,18 @@ https://wenku.baidu.com/view/2c4e8c7a1ed9ad51f01df290.html
 移动()
 弹框处理()
 任务存在()
+
+Import "dm3.dll"
+Dim dm As COM("dm3.dll")
+dm = CreateObject("dm.dmsoft")
+dm.SetPath GetResPath()
+Call dm.SetDict(0, "dm_soft.txt")
+If 区域识字("734,696,921,756","ffffff-aaaaaa",0.9)="驯养" Then
+TracePrint "找到"
+End If
+Function 区域识字(范围,色值,sim)
+Dim x1, y1, x2, y2, a
+a = Split(范围, ",")
+x1 = a(1) : y1 = a(2) : x2 = a(3) : y2 = a(4)
+Return dm.Ocr(x1, y1, x2, y2, 色值, sim)
+End Function
