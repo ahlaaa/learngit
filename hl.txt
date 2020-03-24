@@ -84,3 +84,5 @@ End Function
 
 基址:
 https://wenku.baidu.com/view/cdb56e3067ec102de2bd89eb.html
+python图像文字:
+https://blog.csdn.net/jclian91/article/details/80628188
