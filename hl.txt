@@ -80,3 +80,7 @@ a = Split(范围, ",")
 x1 = a(1) : y1 = a(2) : x2 = a(3) : y2 = a(4)
 Return dm.Ocr(x1, y1, x2, y2, 色值, sim)
 End Function
+
+
+基址:
+https://wenku.baidu.com/view/cdb56e3067ec102de2bd89eb.html
