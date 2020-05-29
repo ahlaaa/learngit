@@ -1,0 +1,113 @@
+# -*- coding: utf-8 -*-
+import logging
+import pygame
+from pygame import surface
+from pygame.locals import *
+from sys import exit
+import time
+
+logging.basicConfig(level=logging.INFO)
+_logger = logging.getLogger(__file__)
+
+CEILS = {0: [], 1: [], 2: [], 3: []}
+CURRENT = []
+GREEN = (0, 255, 0)
+LEFT, RIGHT = 0, 0
+
+
+def _remove_ceil_line():
+	pass
+
+
+def _check_ceil_line():
+	global CEILS, CURRENT
+	e_y = CURRENT[1]
+	new_ceils = {}
+	removes = []
+	for i1, c1 in CEILS.items():
+		remove = False
+		new_ceils[i1] = []
+		for ceil in c1:
+			if ceil[1] == e_y:
+				remove = True
+			else:
+				nc = ceil[:]
+				if nc[1] < e_y: nc[1] += 50
+				new_ceils[i1].append(nc)
+		removes.append(remove)
+	if removes and all(removes):
+		CEILS = new_ceils
+
+
+def _draw_ceil(screen):
+	global CEILS
+	for c1 in CEILS.items():
+		for ceil in c1[1]:
+			pygame.draw.rect(screen, GREEN, (ceil[0], ceil[1], 50, 50), 0)
+
+
+def _move_ceil(screen):
+	global CURRENT, CEILS, LEFT, RIGHT
+	hash_check = CURRENT[0] / 50
+	if CURRENT[1] >= 180 or (CEILS.get(hash_check) and CEILS[hash_check][0][1] - 50 <= CURRENT[1]):
+		CEILS[hash_check].insert(0, CURRENT)
+		_check_ceil_line()
+		CURRENT = []
+		return
+	CURRENT[1] += 10
+	if LEFT: CURRENT[0] = abs(CURRENT[0] - LEFT)
+	if RIGHT: CURRENT[0] = abs(CURRENT[0] + RIGHT)
+	pygame.draw.rect(screen, GREEN, (CURRENT[0], CURRENT[1], 50, 50), 0)
+
+
+def _init_ceil(screen):
+	"""
+    :param: {width: 0; height: 0}
+    :return:
+    """
+	global CURRENT
+	pygame.draw.rect(screen, GREEN, (50, 30, 50, 50), 0)
+	CURRENT = [50, 30]
+
+
+def _init_container():
+	"""
+    :param: {width: 0; height: 0}
+    :return:
+    """
+	pass
+
+
+if __name__ == "__main__":
+	# 初始化pygame，为使用硬件做准备
+	pygame.init()
+	
+	# 创建一个窗口
+	screen = pygame.display.set_mode((640, 480), 0, 32)
+	
+	# 设置窗口标题
+	pygame.display.set_caption("Hello World")
+	
+	# 游戏主循环
+	while True:
+		for event in pygame.event.get():
+			if event.type == QUIT:
+				# 接收到退出时间后退出程序
+				exit()
+			elif event.type == pygame.KEYDOWN:
+				if event.key == K_a:
+					LEFT = 50
+				if event.key == K_d:
+					RIGHT = 50
+			elif event.type == pygame.KEYUP:
+				LEFT, RIGHT = 0, 0
+		
+		screen.fill((0, 0, 0))
+		if not CURRENT:
+			_init_ceil(screen)
+		_move_ceil(screen)
+		_draw_ceil(screen)
+		
+		# 刷新画面
+		pygame.display.update()
+		time.sleep(0.2)
